@@ -11,11 +11,32 @@
     <div class="container">
         <img src="25786134576ce0344893b33a051160b1.jpg" class="img">
         <br>
-        <input type="text" name="name" id="name" placeholder="Name" required>
+        <form action="https://shadas770.wixsite.com/topdesign">
+        <input type="email" name="name" id="name" placeholder="Email" value="" required>
         <br>
-        <input type="password" name="password" id="password" placeholder="Password" required>
+        <input type="password" name="password" id="password" placeholder="Password" autocomplete="current-password" id="id_password" required>
         <br>
-        <button type="button" class="btn">Submit</button>
-    </div>
+        <input type="checkbox" id="toggle-password" class="check"/>
+        <label for="toggle-password" class="show">Show Password</label>
+        <br>
+        <input type="reset" id="reset" class="reset" value="Reset">
+        <button type="submit" class="btn" value="Submit">Log in</button>
+    </form>
+  </div>
+
+    <script>
+         const password = document.getElementById("password");
+         const togglePassword = document.getElementById("toggle-password");
+
+         togglePassword.addEventListener("click", toggleClicked);
+
+         function toggleClicked() {  
+          if (this.checked) {
+            password.type = "text";
+          } else {
+            password.type = "password";
+          }
+        }
+  </script>
 </body>
 </html>
