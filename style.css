@@ -1,6 +1,6 @@
 body{
     background-color: rgb(2, 28, 30);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
 .container{
@@ -62,6 +62,43 @@ body{
 }
 
 .btn:hover{
+    background-color: rgb(0, 117, 125);
+    box-shadow: 0px 0px 20px 2px rgb(0, 187, 200);
+}
+
+.eye{
+    position: absolute;
+    width: 12px;
+    cursor: pointer;
+    margin-top: 23px;
+    margin-left: -15px;
+}
+
+.check{
+    margin-left: -75px;
+    width: 15px;
+    margin-top: 2px;
+    
+}
+
+.show{
+    font-size: 10px;
+    color: darkgray;
+    
+}
+
+.reset{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(2, 28, 30);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 1s;
+}
+
+.reset:hover{
     background-color: rgb(0, 117, 125);
     box-shadow: 0px 0px 20px 2px rgb(0, 187, 200);
 }
