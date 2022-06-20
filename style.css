@@ -1,0 +1,105 @@
+body{
+    background-color: rgb(2, 28, 30);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+.container{
+    text-align: center;
+    margin-top: 10%;
+    background-color: rgb(255, 255, 255);
+    width: 300px;
+    margin-left: 35%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 50px 2px rgba(255, 255, 255, 0.277);
+}
+
+.img{
+    width: 150px;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+#name{
+    margin-top: 30px;
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    outline: 0;
+}
+
+#password{
+    margin-top: 20px;
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    outline: 0;
+}
+
+.btn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(2, 28, 30);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 1s;
+}
+
+#name:hover, #password:hover{
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    border-color: rgb(0, 187, 200);
+}
+
+#name:focus, #password:focus{
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    border-color: rgb(0, 117, 125);
+    color: rgb(0, 117, 125);
+}
+
+.btn:hover{
+    background-color: rgb(0, 117, 125);
+    box-shadow: 0px 0px 20px 2px rgb(0, 187, 200);
+}
+
+.eye{
+    position: absolute;
+    width: 12px;
+    cursor: pointer;
+    margin-top: 23px;
+    margin-left: -15px;
+}
+
+.check{
+    margin-left: -75px;
+    width: 15px;
+    margin-top: 2px;
+    
+}
+
+.show{
+    font-size: 10px;
+    color: darkgray;
+    
+}
+
+.reset{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: rgb(2, 28, 30);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 1s;
+}
+
+.reset:hover{
+    background-color: rgb(0, 117, 125);
+    box-shadow: 0px 0px 20px 2px rgb(0, 187, 200);
+}
+

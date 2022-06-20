@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form class="form">
+        <input type="password" id="password" placeholder="Your placeholder here">
+        <br>
+        <input type="password" id="cnfrm-password" placeholder="Confirm password here">
+        <br>
+        <p id="message"></p>
+        <br>
+        <input type="button" onclick="checkPassword()" value="SUBMIT"/>
+    </form>
+
+    <style>
+        body{
+            background-color: cadetblue;
+        }
+
+        .form{
+            text-align: center;
+            margin-top: 30%;
+            background-color: white;
+            padding: 50px;
+            width: 200px;
+            margin-left: 30%;
+            border-radius: 20px;
+        }
+
+        .pw1{
+            background-color: white;
+            border-top: 1px;
+            border-left: 1px;
+            border-right: 1px;
+            outline: 0;
+            margin-bottom: 20px;
+        }
+
+        .pw2{
+            background-color: white;
+            border-top: 1px;
+            border-left: 1px;
+            border-right: 1px;
+            outline: 0;
+            margin-bottom: 20px;
+        }
+
+        .btn{
+            background-color: cadetblue;
+            border: none;
+            padding: 5px;
+            border-radius: 5px;
+            color: white;
+            margin-top: 20px;
+        }
+    </style>
+
+    <script>
+function checkPassword(){
+    let password = document.getElementById("password").value;
+    let cnfrmPassword = document.getElementById("cnfrm-password").value;
+    console.log(" Password:", password,'\n',"Confirm Password:",cnfrmPassword);
+    let message = document.getElementById("message");
+
+    if(password.length != 0){
+        if(password == cnfrmPassword){
+            message.textContent = "Passwords match";
+            message.style.backgroundColor = "#1dcd59";
+        }
+        else{
+            message.textContent = "Password don't match";
+            message.style.backgroundColor = "#ff4d4d";
+        }
+    }
+    else{
+        alert("Password can't be empty!");
+        message.textContent = "";
+    }
+}
+    </script>
+</body>
+</html>
