@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="signup.css";>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SingUp</title>
+</head>
+<body>
+    <div class="container">
+        
+        <form>
+
+            
+            <div>
+                <label for="image_uploads" class="upload">Choose images to upload (PNG, JPG)</label>             
+                <input type="file" id="image_uploads" name="image_uploads" accept=".jpg, .jpeg, .png"  style="opacity: 0;" required>
+            </div>
+            <div class="preview">
+                <p>No files currently selected for upload</p>
+            </div>
+            <br>
+            <input type="text" name="name" class="name" id="name" placeholder="Name" value="" required>
+            <br>
+            <input type="email" name="name" class="name" id="email" placeholder="Email" value="" required>
+            <br>
+            <input type="password" name="password" id="password" placeholder="Password" autocomplete="current-password" id="id_password" class="password" id="firstPassword" value="" required>
+            <br>
+            <input type="password" id="cnfrm-password" placeholder="Confirm password here" class="password">
+            <br>
+            <input type="checkbox" id="toggle-password" class="check"/>
+            <label for="toggle-password" class="show">Show Password</label>
+            <br>
+            <p id="message" class="massage"></p>
+            <input type="reset" id="reset" class="reset" value="Reset">
+            <input type="button" class="btn" onclick="checkPassword()" value="SUBMIT"/>
+        </form>
+          
+          
+
+          
+  </div>
+  
+  <h2 class="or">or</h2>
+  
+  <div class="logInLink">
+    <h3>log in now</h3>
+     <a href="index.html"> 
+       <h1 class="h1">Log In</h1>
+     </a>
+  </div>
+
+
+<script>
+   const password = document.getElementById("password");
+   const togglePassword = document.getElementById("toggle-password");
+  
+   togglePassword.addEventListener("click", toggleClicked);
+  
+   function toggleClicked() {  
+    
+      if (this.checked) {
+      password.type = "text";
+    } else {
+      password.type = "password";
+    }
+  }
+</script>
+
+  <script>
+    
+    const input = document.querySelector('input');
+const preview = document.querySelector('.preview');
+
+input.style.opacity = 0;
+
+input.addEventListener('change', updateImageDisplay);
+
+function updateImageDisplay() {
+  while(preview.firstChild) {
+    preview.removeChild(preview.firstChild);
+  }
+
+  const curFiles = input.files;
+  if(curFiles.length === 0) {
+    const para = document.createElement('p');
+    para.textContent = 'No files currently selected for upload';
+    preview.appendChild(para);
+  } else {
+    const list = document.createElement('ol');
+    preview.appendChild(list);
+
+    for(const file of curFiles) {
+      const listItem = document.createElement('li');
+      const para = document.createElement('p');
+      if(validFileType(file)) {
+        para.textContent = `File name ${file.name}, file size ${returnFileSize(file.size)}.`;
+        const image = document.createElement('img');
+        image.src = URL.createObjectURL(file);
+
+        listItem.appendChild(image);
+        listItem.appendChild(para);
+      } else {
+        para.textContent = `File name ${file.name}: Not a valid file type. Update your selection.`;
+        listItem.appendChild(para);
+      }
+
+      list.appendChild(listItem);
+    }
+  }
+}
+
+// https://developer.mozilla.org/en-US/docs/Web/Media/Formats/Image_types
+const fileTypes = [
+  "image/apng",
+  "image/bmp",
+  "image/gif",
+  "image/jpeg",
+  "image/pjpeg",
+  "image/png",
+  "image/svg+xml",
+  "image/tiff",
+  "image/webp",
+  "image/x-icon"
+];
+
+function validFileType(file) {
+  return fileTypes.includes(file.type);
+}
+
+function returnFileSize(number) {
+  if(number < 1024) {
+    return number + 'bytes';
+  } else if(number >= 1024 && number < 1048576) {
+    return (number/1024).toFixed(1) + 'KB';
+  } else if(number >= 1048576) {
+    return (number/1048576).toFixed(1) + 'MB';
+  }
+}
+  </script>
+  <script>
+function checkPassword(){
+    let password = document.getElementById("password").value;
+    let cnfrmPassword = document.getElementById("cnfrm-password").value;
+    console.log(" Password:", password,'\n',"Confirm Password:",cnfrmPassword);
+    let message = document.getElementById("message");
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+
+    if(password.length != 0){
+        if(password == cnfrmPassword){
+          if(name.length != 0) {
+            if(email.length != 0) {
+            window.location.href = "index.html";
+           }else{
+            message.textContent = "You did not fill in all the details";
+          message.style.backgroundColor = "#ff4d4d";
+           }
+          }else{
+          message.textContent = "You did not fill in all the details";
+          message.style.backgroundColor = "#ff4d4d";
+        }
+      }
+        else{
+            message.textContent = "Password don't match";
+            message.style.backgroundColor = "#ff4d4d";
+        }
+    }
+    else{
+        alert("Password can't be empty!");
+        message.textContent = "";
+    }
+}
+
+  </script>
+
+</body>
+</html>
