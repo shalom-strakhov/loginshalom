@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@100;400;600;900&display=swap');
+
+*{
+    padding: 0;
+}
+
+body{
+     --col-1: rgb(242, 231, 255);
+     --col-2: rgb(117, 40, 205);
+
+    background-color: var(--col-1);
+}
+
+.logo{
+    color: var(--col-2);
+    font-family: 'Abril Fatface';
+}
+.nav-text{
+    font-family: 'poppins';
+    justify-content: space-between;
+    
+}
